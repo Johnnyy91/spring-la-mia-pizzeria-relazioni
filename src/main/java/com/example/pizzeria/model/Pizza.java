@@ -1,9 +1,12 @@
 package com.example.pizzeria.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -32,6 +35,21 @@ public class Pizza {
 	@NotNull(message="price must be not null")
 	private int price;
 	
+	
+	// ADD LIST/OFFERTA
+	
+	@OneToMany (mappedBy = "pizza") // si riferisce al ManytoOne di pizza presente in Offerta
+	private List<Offerta> Offerte;
+	
+	public List<Offerta> getOfferte() {
+		return Offerte;
+	}
+
+	public void setOfferte(List<Offerta> offerte) {
+		Offerte = offerte;
+	}	
+	
+	//CLOSE LIST/OFFERTA
 	
 	public Integer getId() {
 		return id;

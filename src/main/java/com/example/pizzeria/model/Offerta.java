@@ -2,11 +2,37 @@ package com.example.pizzeria.model;
 
 import java.time.LocalDate;
 
+import org.springframework.data.annotation.Id;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Offerta {
 	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Integer id;
+	
+    private String title;
+	
+    @NotNull
+	private LocalDate dateStart;
+	
+    @NotNull
+	private LocalDate dateEnd;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -30,11 +56,23 @@ public class Offerta {
 	public void setDateEnd(LocalDate dateEnd) {
 		this.dateEnd = dateEnd;
 	}
+	
+	
+	public Pizza getPizza() {
+		return pizza;
+	}
 
-	private String title;
+
+	public void setPizza(Pizza pizza) {
+		this.pizza = pizza;
+	}
+
 	
-	private LocalDate dateStart;
 	
-	private LocalDate dateEnd;
+	@NotNull
+	@ManyToOne
+	private Pizza pizza;
+
+	
 
 }
