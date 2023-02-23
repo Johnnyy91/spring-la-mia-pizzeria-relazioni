@@ -1,9 +1,6 @@
+/*
 package com.example.pizzeria.controller;
 
-import com.example.pizzeria.model.Offerta;
-import com.example.pizzeria.model.Pizza;
-import com.example.pizzeria.repository.OffertaRepository;
-import com.example.pizzeria.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,48 +12,54 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.pizzeria.model.Ingredienti;
+import com.example.pizzeria.model.Pizza;
+//import com.example.pizzeria.repository.IngredientiRepository;
+import com.example.pizzeria.repository.PizzaRepository;
+
 import jakarta.validation.Valid;
 
 
 @Controller
-@RequestMapping("/offerta")
-public class OffertaController {
-	
+@RequestMapping("/ingredienti")
+public class IngredientiController {
 	
 	@Autowired
 	PizzaRepository pizzarep;
 	
-	@Autowired
-	OffertaRepository offertarep;
+	//@Autowired
+	//IngredientiRepository ingredientirep;
 	
+
 	
+	/*
 	@GetMapping("/create")		
 	public String create(
 		@RequestParam(name="id", required = true) Integer id,
 		Model model) throws Exception {
 		
-		Offerta offerta =new Offerta();	
+		Ingredienti ingredienti =new Ingredienti();	
 			
 		
 		Pizza pizza = pizzarep.getReferenceById(id);
-		offerta.setPizza(pizza);
+		ingredienti.setPizza(pizza);
 		
-		model.addAttribute("offerta", offerta);
+		model.addAttribute("ingredienti", ingredienti);
 		
-		return "createOfferta"; 
+		return "createIngredienti"; 
 	}
 	
 	@PostMapping("/create")  	
 	public String store(
-		@Valid @ModelAttribute("offerta") Offerta formOfferta, 
+		@Valid @ModelAttribute("ingredienti") Ingredienti formIngredienti, 
 		BindingResult bindingResult,
 		Model model){
 		
 		if (bindingResult.hasErrors())
-			return "createOfferta"; 
+			return "createIngredienti"; 
 		
-		Pizza pizza =formOfferta.getPizza();
-		offertarep.save(formOfferta);
+		Pizza pizza =formIngredienti.getPizza();
+		ingredientirep.save(formIngredienti);
 		
 		return "redirect:/"; 
 		
@@ -65,24 +68,31 @@ public class OffertaController {
 	@GetMapping("/edit/{id}") 
 	public String edit(@PathVariable("id") Integer id,Model model ) {
 		
-		Offerta offerta;
-		offerta = offertarep.getReferenceById(id);
-		model.addAttribute("offerta", offerta);
+		Ingredienti ingredienti;
+		ingredienti = ingredientirep.getReferenceById(id);
+		model.addAttribute("ingredienti", ingredienti);
 		
-		return "editOfferta"; 
+		return "editIngredienti"; 
 	}
 	
 	@PostMapping("/edit/{id}")
 	public String update(
-			@Valid @ModelAttribute Offerta formPizza,
+			@Valid @ModelAttribute Ingredienti formPizza,
 			BindingResult bindingResult,
 			Model model) {
 		if(bindingResult.hasErrors())
-			return "editOfferta"; 
+			return "editIngredienti"; 
 		
-		offertarep.save(formPizza);
+		ingredientirep.save(formPizza);
 		
 		return "redirect:/pizza";
 		
 	}	
+
 }
+
+*/
+
+
+
+

@@ -2,10 +2,12 @@ package com.example.pizzeria.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
@@ -50,6 +52,24 @@ public class Pizza {
 	}	
 	
 	//CLOSE LIST/OFFERTA
+	
+	
+	// ADD LIST/INGREDIENTI
+	
+ /*
+		@ManyToMany (mappedBy = "pizza") // si riferisce al ManytoMany di pizza presente in Ingredienti
+		private List<Ingredienti> Ingredienti;
+		
+		public List<Ingredienti> getIngredienti() {
+			return Ingredienti;
+		}
+
+		public void setOInigredienti(List<Ingredienti> ingredienti) {
+			Ingredienti = ingredienti;
+		}	
+		*/
+		//CLOSE LIST/INGREDIENTI
+		
 	
 	public Integer getId() {
 		return id;

@@ -20,6 +20,8 @@
         
         
         <a class="btn btn-primary my-2" th:href="@{'/edit/{id}'(id=${pizza.id})}"><i class="fa-regular fa-pen-to-square"></i>Modifica pizza</a>
+        <a class="btn btn-primary my-2" th:href="@{|/offerta/create?id=${pizza.id}|}"><i class="fa-regular fa-pen-to-square"></i>Crea offerta</a>
+
 	
           <form action="#" th:action="@{'/delete/{id}'(id=${pizza.id})}" method="post">
 		   <button class="btn btn-danger" type="submit" id="submitButton">
