@@ -56,18 +56,18 @@ public class Pizza {
 	
 	// ADD LIST/INGREDIENTI
 	
- /*
-		@ManyToMany (mappedBy = "pizza") // si riferisce al ManytoMany di pizza presente in Ingredienti
-		private List<Ingredienti> Ingredienti;
+ 
+	     @ManyToMany(cascade = CascadeType.ALL)
+	     private List<Ingredienti> ingredienti;
 		
 		public List<Ingredienti> getIngredienti() {
-			return Ingredienti;
+			return ingredienti;
 		}
 
 		public void setOInigredienti(List<Ingredienti> ingredienti) {
-			Ingredienti = ingredienti;
+			ingredienti = ingredienti;
 		}	
-		*/
+		
 		//CLOSE LIST/INGREDIENTI
 		
 	

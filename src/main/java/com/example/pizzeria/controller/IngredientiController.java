@@ -1,4 +1,4 @@
-/*
+
 package com.example.pizzeria.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.pizzeria.model.Ingredienti;
 import com.example.pizzeria.model.Pizza;
-//import com.example.pizzeria.repository.IngredientiRepository;
+import com.example.pizzeria.repository.IngredientiRepository;
 import com.example.pizzeria.repository.PizzaRepository;
 
 import jakarta.validation.Valid;
@@ -27,12 +27,12 @@ public class IngredientiController {
 	@Autowired
 	PizzaRepository pizzarep;
 	
-	//@Autowired
-	//IngredientiRepository ingredientirep;
+	@Autowired
+	IngredientiRepository ingredientirep;
 	
 
 	
-	/*
+	
 	@GetMapping("/create")		
 	public String create(
 		@RequestParam(name="id", required = true) Integer id,
@@ -91,7 +91,7 @@ public class IngredientiController {
 
 }
 
-*/
+
 
 
 

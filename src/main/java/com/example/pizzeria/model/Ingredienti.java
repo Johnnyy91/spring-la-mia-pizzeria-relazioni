@@ -27,12 +27,11 @@ public class Ingredienti {
 	@NotNull
 	private int quantity;
 	
-	/*
-	@NotNull
-	@ManyToMany
-	private Pizza pizza;
 	
-*/
+	@ManyToMany(mappedBy = "ingredienti")
+	private List<Pizza> pizza;
+	
+
 	public Integer getId() {
 		return id;
 	}
@@ -57,15 +56,15 @@ public class Ingredienti {
 		this.price = price;
 	}
 
-	/*
-	public Pizza getPizza() {
+
+	public List<Pizza> getPizza() {
 		return pizza;
 	}
 
-	public void setPizza(Pizza pizza) {
+	public void setPizza(List<Pizza> pizza) {
 		this.pizza = pizza;
 	}
-*/
+
 	public int getQuantity() {
 		return quantity;
 	}
